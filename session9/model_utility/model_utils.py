@@ -1,5 +1,4 @@
-import albumentations as A
-# from __future__ import print_function
+import data_augmentation.albumentations as A
 import torch
 import torch.optim as optim
 from torchvision import datasets, transforms
@@ -19,9 +18,9 @@ import model_utility.data_utils as dutils
 import model_utility.model_utils as mutils
 import model_utility.plot_utils as putils 
 import model_utility.regularization as regularization
-import model_file.model_cifar as model_cifar
+import tsai_models.model_cifar as model_cifar
 
-import model_file.models as mod
+import tsai_models.models as mod
 
 import matplotlib.pyplot as plt
 import seaborn as sns

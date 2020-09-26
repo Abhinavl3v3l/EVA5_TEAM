@@ -12,39 +12,20 @@ import torch.nn.functional as F
 import os 
 import numpy as np
 import matplotlib.pyplot as plt
-import torch
 
 import model_utility.data_utils as dutils
 import model_utility.model_utils as mutils
 import model_utility.plot_utils as putils 
 import model_utility.regularization as regularization
-import model_file.model_cifar as model_cifar
+import model_utility.alb_utils as alb
 
-import model_file.models as mod
+import tsai_models.model_cifar as model_cifar
+import tsai_models.models as mod
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-from albumentations.pytorch import ToTensor
+import data_augmentation.albumentations as A
+from data_augmentation.albumentations.pytorch import ToTensor
 
-# al.Cutout()
-# al.RandomCrop()
-# al.HorizontalFlip()
-# al.ElasticTransform()
-# al.CoarseDropout()
-# al.Normalize()
-
-
-# albumentations_transform = A.Compose([
-#     A.Resize(256, 256), 
-#     A.RandomCrop(224, 224),
-#     A.HorizontalFlip(),
-#     A.Normalize(
-#         mean=[0.485, 0.456, 0.406],
-#         std=[0.229, 0.224, 0.225],
-#     ),
-#     ToTensorV2()
-# ])
-
+import grad_cam.grad_cam_viz as grad_cam_viz
 
 
 brightness_val =0.13
@@ -133,4 +114,4 @@ def get_dataloader(batch_size, num_workers, cuda,path):
     # test dataloader
     test_loader = torch.utils.data.DataLoader(testset, **dataloader_args)
 
-    return train_loader, test_loader
+    return train_loader, test_loader,trainset, testset

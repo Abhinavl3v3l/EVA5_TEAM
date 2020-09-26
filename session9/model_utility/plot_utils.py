@@ -8,7 +8,7 @@ def imshow(img):
     npimg = img.numpy()
     plt.imshow(np.transpose(npimg, (1, 2, 0)))
 
-def plot_model_history(title_name, train_acc_hist, test_acc_hist, train_loss_hist, test_loss_hist, save_filename):
+def plot_model_history(title_name, train_acc_hist, test_acc_hist, train_loss_hist, test_loss_hist, save_filename,path ):
     fig, axs = plt.subplots(1,2,figsize=(20,5))
     # summarize history for accuracy
     x_size = len(train_acc_hist)
@@ -35,7 +35,7 @@ def plot_model_history(title_name, train_acc_hist, test_acc_hist, train_loss_his
     axs[1].set_xticks(np.arange(1,x_size+1),x_size/10)
     axs[1].legend(legend_list, loc='best')
     plt.show()
-    fig.savefig("{}.png".format(save_filename))
+    fig.savefig("{}.jpg".format(path + save_filename))
 
 
 def plot_model_comparison(legend_list, model1_acc_hist, model1_loss_hist,
@@ -68,10 +68,10 @@ def plot_model_comparison(legend_list, model1_acc_hist, model1_loss_hist,
     axs[1].set_xticks(np.arange(1,x_size+1),x_size/10)
     axs[1].legend(legend_list, loc='best')
     plt.show()
-    fig.savefig("model_compare.png")
+    fig.savefig('/home/jd/Desktop/EVA5/session9/image/'+'model_compare.jpg')
 
 
-def miss_classification(typ ,model, device, classes, testloader, num_of_images = 20, save_filename="misclassified"):
+def miss_classification(model, device, classes, testloader,path,typ_of_file, num_of_images = 20, save_filename="misclassified"):
     model.eval()
     misclassified_cnt = 0
     fig = plt.figure(figsize=(10,9))
@@ -98,11 +98,11 @@ def miss_classification(typ ,model, device, classes, testloader, num_of_images =
         if(misclassified_cnt==num_of_images):
             break
 
-    fig.savefig(typ + '_missclassified_images'+ '.jpg')
+    fig.savefig( path +typ_of_file + '_missclassified_images'+ '.jpg')
     return
 
 
-def plot_dataset_images(device, classes, data_loader, num_of_images=20):
+def plot_dataset_images(device, classes, data_loader, save_path,num_of_images=20,):
     cnt = 0
     fig = plt.figure(figsize=(10,9))
     for data, target in data_loader:
@@ -119,4 +119,5 @@ def plot_dataset_images(device, classes, data_loader, num_of_images=20):
                 break
         if(cnt==num_of_images):
             break
+    fig.savefig(save_path +'random_image'+'.jpg')
     return
