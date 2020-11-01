@@ -4,7 +4,6 @@
 * Pruthiraj Jaisingh
 * Prashanth Shinagare
 
-Colab File - https://colab.research.google.com/drive/11RHX60u2fNkbNQ14T1XWV3xNHmtp3cNA#scrollTo=yGqJiLw1dwVw
 
 ## Dataset Preparation for Monocular Depth Estimation
 
