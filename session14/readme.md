@@ -4,6 +4,8 @@
 * Pruthiraj Jaisingh
 * Prashanth Shinagare
 
+Colab File - https://colab.research.google.com/drive/11RHX60u2fNkbNQ14T1XWV3xNHmtp3cNA#scrollTo=yGqJiLw1dwVw
+
 ## Dataset Preparation for Monocular Depth Estimation
 
 * We have a total of 3590 images of people wearing Hardhat, Vest, Mask and Boots which will be used for Dataset generation.
