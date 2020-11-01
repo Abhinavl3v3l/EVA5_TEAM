@@ -23,4 +23,4 @@ Note: The Planercnn code will also produce depth maps but are not as good as MID
 ## The Notebooks used for the image generation are -
 
 * [MIDAS Depth map Generator Colab]()
-* [PlanerCNN segmented image Generator]()
+* [PlanerCNN segmented image Generator](https://colab.research.google.com/drive/11RHX60u2fNkbNQ14T1XWV3xNHmtp3cNA#scrollTo=yGqJiLw1dwVw)
